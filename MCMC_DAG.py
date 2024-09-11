@@ -21,8 +21,6 @@ def generate(sig, power, n ,d):
     B = np.random.random((d,d))
     B[B<.5] = -1
     B[B>=.5] = 1
-    #REMEMBER TO UNCOMMENT THIS
-    #A *= B
     A *= power
     X = (np.linalg.inv(np.eye(d)-A)@X.T).T
     return X, A
